@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Finnish A2 Grammar</title>
+<style>
+:root{--bg:#f6f8fb;--sf:#fff;--tx:#14213d;--mu:#5b6678;--ac:#1d4ed8;--ok:#15803d;--okb:#dcfce7;--no:#b91c1c;--nob:#fee2e2;--bd:#d9e0ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f172a;--sf:#1e293b;--tx:#e8edf5;--mu:#9aa7bb;--ac:#7aa2ff;--ok:#4ade80;--okb:#14391f;--no:#f87171;--nob:#451a1a;--bd:#334155}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.7rem;margin:.3em 0}h3{margin:1.2em 0 .3em;color:var(--ac)}
+.sub{color:var(--mu)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px;text-align:left;color:var(--tx);font:inherit;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.card:hover{border-color:var(--ac)}.card span{color:var(--ac)}.card small{color:var(--mu)}
+button{font:inherit}
+.back{background:none;border:0;color:var(--ac);cursor:pointer;padding:4px 0}
+.tabs{display:flex;gap:8px;margin:10px 0 16px}
+.tabs button,.btn{border:1px solid var(--bd);background:var(--sf);color:var(--tx);padding:9px 16px;border-radius:10px;cursor:pointer}
+.tabs button.on,.btn.p{background:var(--ac);color:#fff;border-color:var(--ac)}
+.btn.p{color:#fff}@media(prefers-color-scheme:dark){.tabs button.on,.btn.p{color:#0f172a}}
+.box{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:16px;margin:12px 0}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;margin:8px 0}
+td,th{border:1px solid var(--bd);padding:6px 9px;text-align:left}th{background:var(--bg)}
+.q{font-size:1.25rem;margin:8px 0 14px}
+input{font:inherit;width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+.fb{border-radius:10px;padding:12px;margin:12px 0}.fb.y{background:var(--okb);color:var(--ok)}.fb.n{background:var(--nob);color:var(--no)}
+.fb div{color:var(--tx)}
+.bar{height:6px;background:var(--bd);border-radius:4px;margin-bottom:12px}.bar i{display:block;height:100%;background:var(--ac);border-radius:4px}
+.r{padding:8px 0;border-bottom:1px solid var(--bd)}.r small{color:var(--mu);display:block}
+b.f{color:var(--ac)}
+</style></head><body><main id="app"></main>
+<script>
+const L=[
+{id:'part',t:'Partitive',fi:'Partitiivi',h:`<p>The partitive means “some of / a part of” something. It is used for things that are uncountable, unfinished, negated, or after numbers above one.</p>
+<h3>How to form it (singular)</h3>
+<ul><li>Most words ending in a vowel: add <b>-a / -ä</b> (vowel harmony). talo → <b>taloa</b>, kala → <b>kalaa</b>, leipä → <b>leipää</b>, kirja → <b>kirjaa</b>.</li>
+<li>Loan words in -i: add -a/-ä. kahvi → <b>kahvia</b>, bussi → <b>bussia</b>.</li>
+<li>Native words in -i change to an e-stem or use -ta/-tä: ovi → <b>ovea</b>, kieli → <b>kieltä</b>, vesi → <b>vettä</b>, lapsi → <b>lasta</b>, käsi → <b>kättä</b>.</li>
+<li>Words in -nen: nainen → <b>naista</b>.</li></ul>
+<div class=tw><table><tr><th>Pronoun</th><th>Partitive</th></tr><tr><td>minä / sinä / hän</td><td>minua / sinua / häntä</td></tr><tr><td>me / te / he</td><td>meitä / teitä / heitä</td></tr></table></div>
+<h3>When to use it</h3>
+<ol><li><b>Uncountable things / amounts:</b> Juon vettä. (I drink water.)</li>
+<li><b>Negative sentences:</b> En syö lihaa. (I don’t eat meat.)</li>
+<li><b>After numbers above 1:</b> kaksi kahvia, kolme lasta.</li>
+<li><b>Ongoing actions:</b> Luen kirjaa. (I’m reading a book.)</li>
+<li><b>Feelings and certain verbs:</b> rakastaa, odottaa, rakastan sinua, odotan bussia.</li></ol>`,
+q:['Minä juon ___ (kahvi).|kahvia|I drink coffee.','Syön ___ (leipä).|leipää|I eat bread.','Hän ostaa ___ (maito).|maitoa|He/She buys milk.','En syö ___ (liha).|lihaa|I don’t eat meat.','Haluan kaksi ___ (kahvi).|kahvia|I want two coffees.','Minä rakastan ___ (sinä).|sinua|I love you.','Luen ___ (kirja).|kirjaa|I’m reading a book.','Juomme ___ (vesi).|vettä|We drink water.','Hän ei osta ___ (auto).|autoa|He/She doesn’t buy a car.','Meillä on kolme ___ (lapsi).|lasta|We have three children.','Syön ___ (kala).|kalaa|I eat fish.','Odotan ___ (bussi).|bussia|I’m waiting for the bus.']},
+{id:'past',t:'Past tense',fi:'Imperfekti',h:`<p>The past tense (imperfekti) is made from the verb stem plus <b>-i-</b>, then the normal personal endings.</p>
+<div class=tw><table><tr><th>Person</th><th>Ending</th><th>puhua (speak)</th></tr><tr><td>minä</td><td>-n</td><td>puhuin</td></tr><tr><td>sinä</td><td>-t</td><td>puhuit</td></tr><tr><td>hän</td><td>–</td><td>puhui</td></tr><tr><td>me</td><td>-mme</td><td>puhuimme</td></tr><tr><td>te</td><td>-tte</td><td>puhuitte</td></tr><tr><td>he</td><td>-vat/-vät</td><td>puhuivat</td></tr></table></div>
+<h3>By verb type</h3>
+<ul><li><b>Type 1</b> (-a/-ä): drop the final vowel, add -i. puhua → puhui, asua → asui. Consonant gradation applies: ostaa → ostin.</li>
+<li><b>Type 2</b> (-da/-dä): drop -da, add -i. juoda → <b>join</b>, syödä → <b>söin</b>, käydä → <b>kävin</b>.</li>
+<li><b>Type 3</b> (-la/-na/-ra/-sta): add -i- to the stem. tulla → <b>tulin</b>, mennä → <b>menin</b>, olla → <b>olin</b>.</li>
+<li><b>Type 4</b> (-ta/-tä): t → s. haluta → <b>halusin</b>, tavata → <b>tapasin</b>.</li>
+<li><b>Type 5</b>: tarvita → tarvitsin. <b>Type 6</b>: vanheta → vanhenin.</li>
+<li>Irregular: nähdä → <b>näin, näit, näki</b>.</li></ul>
+<h3>Negative past</h3><p>Use <b>en/et/ei/emme/ette/eivät</b> + the past participle <b>-nut/-nyt</b> (plural -neet): En puhunut. Eivät puhuneet.</p>`,
+q:['Eilen minä ___ (puhua) suomea.|puhuin|Yesterday I spoke Finnish.','Sinä ___ (asua) Helsingissä.|asuit|You lived in Helsinki.','Hän ___ (tulla) kotiin.|tuli|He/She came home.','Me ___ (mennä) kouluun.|menimme|We went to school.','Minä ___ (juoda) kahvia.|join|I drank coffee.','He ___ (syödä) pizzaa.|söivät|They ate pizza.','Minä ___ (haluta) kahvia.|halusin|I wanted coffee.','Sinä ___ (ostaa) leipää.|ostit|You bought bread.','Me ___ (olla) kotona.|olimme|We were at home.','Hän ___ (nähdä) elokuvan.|näki|He/She saw a movie.','Te ___ (tavata) ystävän.|tapasitte|You (pl.) met a friend.','Minä en ___ (puhua) suomea eilen.|puhunut|I didn’t speak Finnish yesterday.']},
+{id:'gen',t:'Genitive',fi:'Genetiivi',h:`<p>The genitive shows possession (“of / ’s”). Its ending is <b>-n</b> added to the stem.</p>
+<h3>Forming it</h3>
+<ul><li>Vowel-ending words: add -n. talo → <b>talon</b>, kirja → <b>kirjan</b>, kahvi → <b>kahvin</b>, Maria → <b>Marian</b>.</li>
+<li>Words in -nen: nainen → <b>naisen</b>, ystävällinen → ystävällisen.</li>
+<li>Words in -i with an e-stem: lapsi → <b>lapsen</b>, vesi → <b>veden</b>, kieli → <b>kielen</b>, käsi → <b>käden</b>.</li>
+<li>Consonant gradation often applies: kaupunki → <b>kaupungin</b>, kauppa → <b>kaupan</b>.</li></ul>
+<div class=tw><table><tr><th>Pronoun</th><th>Genitive</th></tr><tr><td>minä, sinä, hän</td><td>minun, sinun, hänen</td></tr><tr><td>me, te, he</td><td>meidän, teidän, heidän</td></tr></table></div>
+<h3>Use</h3>
+<ul><li>The owner comes <b>before</b> the thing owned: Marian kirja = Maria’s book.</li>
+<li>The genitive also marks the total object (Ostan kirjan.) and appears before postpositions (talon edessä).</li></ul>`,
+q:['Tämä on ___ (Maria) kirja.|Marian|This is Maria’s book.','___ (minä) auto on punainen.|Minun|My car is red.','Tämä on ___ (lapsi) lelu.|lapsen|This is the child’s toy.','Missä on ___ (ystävä) koti?|ystävän|Where is the friend’s home?','Tämä on ___ (nainen) laukku.|naisen|This is the woman’s bag.','___ (opettaja) nimi on Liisa.|Opettajan|The teacher’s name is Liisa.','___ (me) koti on Jyväskylässä.|Meidän|Our home is in Jyväskylä.','___ (hän) veli asuu Turussa.|Hänen|His/Her brother lives in Turku.','___ (Suomi) pääkaupunki on Helsinki.|Suomen|Finland’s capital is Helsinki.','Tämä on ___ (kaupunki) keskusta.|kaupungin|This is the city’s centre.','___ (kissa) ruoka on pöydällä.|Kissan|The cat’s food is on the table.','___ (he) talo on iso.|Heidän|Their house is big.']},
+{id:'int',t:'Inside cases',fi:'Sisäpaikallissijat',h:`<p>Three cases describe being <b>in</b>, going <b>into</b>, and coming <b>out of</b> a place.</p>
+<div class=tw><table><tr><th>Case</th><th>Meaning</th><th>Ending</th><th>talo</th></tr><tr><td>Inessive</td><td>in</td><td>-ssa / -ssä</td><td>talossa</td></tr><tr><td>Elative</td><td>out of, from</td><td>-sta / -stä</td><td>talosta</td></tr><tr><td>Illative</td><td>into</td><td>-Vn (repeat last vowel), -hVn, -seen</td><td>taloon</td></tr></table></div>
+<h3>Notes</h3>
+<ul><li>Inessive and elative attach to the <b>genitive stem</b> (weak grade): kauppa → kaupassa, kaupasta; kaupunki → kaupungissa, kaupungista; kuppi → kupissa.</li>
+<li>The illative usually uses the <b>strong</b> grade: kauppa → <b>kauppaan</b>, kaupunki → <b>kaupunkiin</b>, Helsinki → Helsinkiin.</li>
+<li>Illative: koulu → kouluun, laukku → laukkuun. Words in -i, -e, -u, -y: add -hVn in some cases (työ → työhön).</li>
+<li>Countries/cities: Suomi → Suomessa, Suomesta, Suomeen.</li></ul>
+<p>Examples: Asun Helsingissä. Menen kouluun. Tulen kaupasta.</p>`,
+q:['Asun ___ (Helsinki).|Helsingissä|I live in Helsinki.','Olen ___ (koulu).|koulussa|I am at school.','Menen ___ (koulu).|kouluun|I go to school.','Tulen ___ (kauppa).|kaupasta|I come from the shop.','Menemme ___ (kauppa).|kauppaan|We go to the shop.','Hän on ___ (kaupunki).|kaupungissa|He/She is in the city.','Kahvi on ___ (kuppi).|kupissa|The coffee is in the cup.','Otan avaimen ___ (laukku).|laukusta|I take the key out of the bag.','Laitan kirjan ___ (laukku).|laukkuun|I put the book into the bag.','He asuvat ___ (Suomi).|Suomessa|They live in Finland.','Opiskelen ___ (yliopisto).|yliopistossa|I study at the university.','Pekka tulee ___ (työ).|työstä|Pekka comes from work.']},
+{id:'ext',t:'Outside cases',fi:'Ulkopaikallissijat',h:`<p>Three cases describe being <b>on / at</b>, going <b>onto / to</b>, and coming <b>from</b> a surface or person.</p>
+<div class=tw><table><tr><th>Case</th><th>Meaning</th><th>Ending</th><th>pöytä</th></tr><tr><td>Adessive</td><td>on, at; by means of; have</td><td>-lla / -llä</td><td>pöydällä</td></tr><tr><td>Ablative</td><td>from</td><td>-lta / -ltä</td><td>pöydältä</td></tr><tr><td>Allative</td><td>onto, to</td><td>-lle</td><td>pöydälle</td></tr></table></div>
+<h3>Uses</h3>
+<ul><li><b>Surfaces/open places:</b> torilla (at the market), pihalla (in the yard), kadulla (on the street).</li>
+<li><b>People (to/from):</b> Annan lahjan äidille. Saan viestin Annalta.</li>
+<li><b>Means or tools:</b> junalla (by train), kynällä (with a pen).</li>
+<li><b>Possession</b> (“have”): <b>Minulla on</b> kissa. Sinulla on aikaa. Meillä on koti.</li></ul>
+<div class=tw><table><tr><th>Pronoun</th><th>Adessive</th></tr><tr><td>minä, sinä, hän</td><td>minulla, sinulla, hänellä</td></tr><tr><td>me, te, he</td><td>meillä, teillä, heillä</td></tr></table></div>
+<p>Like the inside cases, they use the weak-grade stem (pöytä → pöydän → pöydällä).</p>`,
+q:['Kirja on ___ (pöytä).|pöydällä|The book is on the table.','Laitan kirjan ___ (pöytä).|pöydälle|I put the book on the table.','Otan kirjan ___ (pöytä).|pöydältä|I take the book from the table.','___ (minä) on kissa.|Minulla|I have a cat.','___ (sinä) on aikaa.|Sinulla|You have time.','Annan lahjan ___ (äiti).|äidille|I give a gift to mum.','Hän on ___ (tori).|torilla|He/She is at the market square.','Saan viestin ___ (Anna).|Annalta|I get a message from Anna.','Matkustan ___ (juna).|junalla|I travel by train.','___ (me) on iso koti.|Meillä|We have a big home.','Kirjoitan ___ (kynä).|kynällä|I write with a pen.','Lapset ovat ___ (piha).|pihalla|The children are in the yard.']},
+{id:'grad',t:'Consonant gradation',fi:'Astevaihtelu',h:`<p>Finnish consonants k, p, t change between <b>strong</b> and <b>weak</b> grade. The weak grade appears when the syllable after it becomes <b>closed</b> (ends in a consonant), e.g. before -n.</p>
+<div class=tw><table><tr><th>Strong</th><th>Weak</th><th>Example</th></tr>
+<tr><td>kk</td><td>k</td><td>kukka → kukan</td></tr><tr><td>pp</td><td>p</td><td>kauppa → kaupan</td></tr><tr><td>tt</td><td>t</td><td>matto → maton</td></tr>
+<tr><td>k</td><td>– (vanishes)</td><td>ruoka → ruoan</td></tr>
+<tr><td>p</td><td>v</td><td>leipä → leivän</td></tr><tr><td>t</td><td>d</td><td>katu → kadun, pöytä → pöydän</td></tr>
+<tr><td>nk</td><td>ng</td><td>kenkä → kengän</td></tr><tr><td>mp</td><td>mm</td><td>kampa → kamman</td></tr>
+<tr><td>nt</td><td>nn</td><td>ranta → rannan, antaa → annan</td></tr><tr><td>rt</td><td>rr</td><td>virta → virran</td></tr><tr><td>lt</td><td>ll</td><td>kulta → kullan</td></tr></table></div>
+<h3>Where you see it</h3>
+<ul><li>Noun stems (genitive, inside/outside cases): kauppa → kaupassa.</li>
+<li>Verbs: ottaa → <b>otan</b>, antaa → <b>annan</b>, lukea → <b>luen</b>.</li>
+<li>Not every word changes (e.g. tyttö → <b>tytön</b>, but kala → kalan): learn the pattern with each new word.</li></ul>`,
+q:['Genitive of kukka: ___|kukan|of the flower','Genitive of katu: ___|kadun|of the street','Genitive of leipä: ___|leivän|of the bread','Genitive of kauppa: ___|kaupan|of the shop','Genitive of matto: ___|maton|of the rug','Genitive of kampa: ___|kamman|of the comb','Genitive of kenkä: ___|kengän|of the shoe','Genitive of ranta: ___|rannan|of the beach','Genitive of tyttö: ___|tytön|of the girl','Genitive of ruoka: ___|ruoan|of the food','Genitive of pöytä: ___|pöydän|of the table','Minä ___ (antaa) lahjan.|annan|I give a gift.']}
+];
+const $=s=>document.querySelector(s),app=$('#app'),esc=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const today=()=>new Date().toISOString().slice(0,10);
+let S={},cur=0,run=null;
+try{S=JSON.parse(localStorage.getItem('fiA2'))||{}}catch(e){}
+const save=()=>{try{localStorage.setItem('fiA2',JSON.stringify(S))}catch(e){}};
+const st=id=>S[id]||(S[id]={wrong:[],day:null,set:[],res:null,perfect:0});
+const item=(l,k)=>{const p=l.q[k].split('|');return{q:p[0],a:p[1],m:p[2]}};
+function build(l){const s=st(l.id);if(s.day===today()&&s.set.length)return;
+ s.day=today();s.res=null;const set=s.wrong.slice(0,10),n=l.q.length,d=Math.floor(Date.now()/864e5);
+ for(let i=0;set.length<10;i++){const k=(d*10+i)%n;if(!set.includes(k))set.push(k)}
+ s.set=set;save()}
+function home(){run=null;let h='<h1>🇫🇮 Finnish A2 Grammar</h1><p class=sub>Choose a lesson, read the theory, then complete your 10 daily exercises. You need 10/10. Anything you miss returns in tomorrow’s set.</p><div class=grid>';
+ L.forEach((l,i)=>{const s=st(l.id),dn=s.res&&s.day===today();
+ h+=`<button class=card onclick="open_(${i})"><b>${i+1}. ${l.t}</b><span>${l.fi}</span><small>${dn?(s.res.score==10?'✅ Today: 10/10':'⚠️ Today: '+s.res.score+'/10'):'⏳ Today: not done'}<br>${s.wrong.length} to review · ${s.perfect} perfect days</small></button>`});
+ app.innerHTML=h+'</div>'}
+function open_(i,tab){cur=i;run=null;tab=tab||'learn';const l=L[i];
+ app.innerHTML=`<button class=back onclick="home()">← All lessons</button><h1>${i+1}. ${l.t} <small class=sub>· ${l.fi}</small></h1><div class=tabs><button class="${tab=='learn'?'on':''}" onclick="open_(${i},'learn')">📖 Learn</button><button class="${tab!='learn'?'on':''}" onclick="open_(${i},'practice')">✏️ Daily practice</button></div><div id=v></div>`;
+ if(tab=='learn')$('#v').innerHTML=l.h;else practice()}
+function practice(){const l=L[cur];build(l);const s=st(l.id);
+ if(s.res)return summary(s.res.score,s.res.ok,false);
+ const r=s.set.filter(k=>s.wrong.includes(k)).length;
+ $('#v').innerHTML=`<div class=box><b>Today’s set: 10 exercises</b><p>${r?r+' of them are review questions you missed before.':'Fresh questions for today.'} Type the missing word in the correct form. You need <b>10/10 (100%)</b>; missed ones come back tomorrow.</p><button class="btn p" onclick="start(false)">Start</button></div>`}
+function start(redo){run={i:0,ok:[],redo,fb:false};ask()}
+function ask(){const l=L[cur],s=st(l.id),it=item(l,s.set[run.i]);run.fb=false;
+ $('#v').innerHTML=`<div class=bar><i style="width:${run.i*10}%"></i></div><small class=sub>Question ${run.i+1} of 10</small><div class=q>${esc(it.q)}</div><input id=ans autocomplete=off autocapitalize=off spellcheck=false placeholder="Type your answer"><div id=fb></div><button id=go class="btn p" onclick="act()">Check</button>`;
+ const a=$('#ans');a.focus();a.onkeydown=e=>{if(e.key=='Enter')act()}}
+function act(){run.fb?next():check()}
+function check(){const l=L[cur],s=st(l.id),it=item(l,s.set[run.i]),inp=$('#ans'),v=inp.value.trim();
+ if(!v)return;const ok=v.toLowerCase()==it.a.toLowerCase();run.ok.push(ok);run.fb=true;inp.disabled=true;
+ $('#fb').innerHTML=`<div class="fb ${ok?'y':'n'}"><b>${ok?'✓ Correct!':'✗ Not quite — you wrote “'+esc(v)+'”'}</b><div>Right answer: <b>${esc(it.a)}</b><br>${esc(it.q.replace('___',it.a))}<br>🇬🇧 ${esc(it.m)}</div></div>`;
+ $('#go').textContent=run.i<9?'Next →':'Finish'}
+function next(){run.i++;run.i<10?ask():finish()}
+function finish(){const l=L[cur],s=st(l.id),score=run.ok.filter(Boolean).length;
+ if(!run.redo){s.set.forEach((k,j)=>{const w=s.wrong.indexOf(k);if(run.ok[j]){if(w>-1)s.wrong.splice(w,1)}else if(w<0)s.wrong.push(k)});
+  s.res={score,ok:run.ok};if(score==10)s.perfect++;save()}
+ summary(score,run.ok,run.redo)}
+function summary(score,ok,redo){const l=L[cur],s=st(l.id);
+ const miss=10-score;
+ let h=`<div class=box><h3 style="margin-top:0">${score==10?'🎉 Perfect — 100%!':'Result: '+score+'/10'}</h3><p>${score==10?'Today’s lesson is complete.':'100% is required. The '+miss+' missed exercise'+(miss>1?'s':'')+(redo?' (extra practice does not change tomorrow’s list).':' will be added to tomorrow’s list.')}</p>`;
+ s.set.forEach((k,j)=>{const it=item(l,k);h+=`<div class=r>${ok[j]?'✅':'❌'} ${esc(it.q.replace('___',it.a))}<small>🇬🇧 ${esc(it.m)}</small></div>`});
+ h+=`<p><button class="btn" onclick="start(true)">Redo for extra practice</button> <button class="btn" onclick="home()">All lessons</button></p></div>`;
+ $('#v').innerHTML=h}
+home();
+</script></body></html>
