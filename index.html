@@ -293,16 +293,16 @@ function open_(i,tab){cur=i;run=null;tab=tab||'learn';const l=L[i];
 function practice(){const l=L[cur];build(l);const s=st(l.id);
  if(s.res)return summary(s.res.score,s.res.ok,false);
  const r=s.set.filter(k=>s.wrong.includes(k)).length;
- $('#v').innerHTML=`<div class=box><b>Today’s set: 10 exercises</b><p>${r?r+' of them are review questions you missed before.':'Fresh questions for today.'} Type the missing word in the correct form. You need <b>10/10 (100%)</b>; missed ones come back tomorrow.</p><button class="btn p" onclick="start(false)">Start</button></div>`}
+ $('#v').innerHTML=`<div class=box><b>Today’s set: 10 exercises</b><p>${r?r+' of them are review questions you missed before.':'Fresh questions for today.'} Type the missing word in the correct form. You can only move on once your answer is <b>100% right</b>; if you miss it, the correct answer is shown and you retype it. First-try misses come back tomorrow.</p><button class="btn p" onclick="start(false)">Start</button></div>`}
 function start(redo){run={i:0,ok:[],redo,fb:false};ask()}
 function ask(){const l=L[cur],s=st(l.id),it=item(l,s.set[run.i]);run.fb=false;
- $('#v').innerHTML=`<div class=bar><i style="width:${run.i*10}%"></i></div><small class=sub>Question ${run.i+1} of 10</small><div class=q>${esc(it.q)}</div><input id=ans autocomplete=off autocapitalize=off spellcheck=false placeholder="Type your answer"><div id=fb></div><button id=go class="btn p" onclick="act()">Check</button>`;
+ $('#v').innerHTML=`<div class=bar><i style="width:${run.i*10}%"></i></div><small class=sub>Question ${run.i+1} of 10</small><div class=q>${esc(it.q)}</div><input id=ans autocomplete=off autocapitalize=off spellcheck=false placeholder="Type your answer"><div id=fb></div><button id=go class="btn p" onclick="act()">Check</button><button id=nx class="btn p" style="display:none" onclick="act()">Next</button>`;
  const a=$('#ans');a.focus();a.onkeydown=e=>{if(e.key=='Enter')act()}}
 function act(){run.fb?next():check()}
 function check(){const l=L[cur],s=st(l.id),it=item(l,s.set[run.i]),inp=$('#ans'),v=inp.value.trim();
- if(!v)return;const ok=v.toLowerCase()==it.a.toLowerCase();run.ok.push(ok);run.fb=true;inp.disabled=true;
- $('#fb').innerHTML=`<div class="fb ${ok?'y':'n'}"><b>${ok?'✓ Correct!':'✗ Not quite — you wrote “'+esc(v)+'”'}</b><div>Right answer: <b>${esc(it.a)}</b><br>${esc(it.q.replace('___',it.a))}<br>🇬🇧 ${esc(it.m)}</div></div>`;
- $('#go').textContent=run.i<9?'Next →':'Finish'}
+ if(!v)return;const ok=v.toLowerCase()==it.a.toLowerCase();if(run.ok.length<=run.i)run.ok.push(ok);const first=run.ok[run.i];if(ok){run.fb=true;inp.disabled=true}else{inp.value='';inp.focus()}
+ $('#fb').innerHTML=`<div class="fb ${ok?'y':'n'}"><b>${ok?(first?'✓ Correct!':'✓ Correct now — this one returns tomorrow.'):'✗ Not quite — you wrote “'+esc(v)+'”. Type the right answer to continue.'}</b><div>Right answer: <b>${esc(it.a)}</b><br>${esc(it.q.replace('___',it.a))}<br>🇬🇧 ${esc(it.m)}</div></div>`;
+ if(ok){$('#go').style.display='none';const n=$('#nx');n.style.display='';n.textContent=run.i<9?'Next →':'Finish';n.focus()}else $('#go').textContent='Try again'}
 function next(){run.i++;run.i<10?ask():finish()}
 function finish(){const l=L[cur],s=st(l.id),score=run.ok.filter(Boolean).length;
  if(!run.redo){s.set.forEach((k,j)=>{const w=s.wrong.indexOf(k);if(run.ok[j]){if(w>-1)s.wrong.splice(w,1)}else if(w<0)s.wrong.push(k)});
